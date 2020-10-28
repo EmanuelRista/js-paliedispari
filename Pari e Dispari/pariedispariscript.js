@@ -43,3 +43,12 @@ if (sumResult % 2 == 0) {
 } else {
   alert("La somma dei due numeri è dispari!");
 }
+//Se il fra ha scelto Pari e la somma è pari = "Complimenti hai vinto", se ha scelto Dispari e la somma è dispari "Complimenti hai vinto", diversamente "Hai perso"
+
+if (userChoicePariDispari = "Pari" && (sumResult % 2) = 0 {
+  alert("Complimenti fra! Hai vinto!");
+} else if (userChoicePariDispari = "Dispari" && (sumResult % 2) = 1 {
+  alert("Complimenti fra! Hai vinto!");
+} else {
+  alert("Hai perso fra! Sei scarso...");
+}
