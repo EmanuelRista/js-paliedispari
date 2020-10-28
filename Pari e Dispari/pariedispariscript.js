@@ -28,5 +28,18 @@ function getRandomArbitrary(max, min) {
 }
 
 //Voglio far si che ci sia una conferma richiamando il numero scelto dal pc in un alert
-var numero = getRandomArbitrary(5, 1);
-alert("Ho scelto il numero " + numero);
+var iaChoiceNumber = getRandomArbitrary(5, 1);
+alert("Ho scelto il numero " + iaChoiceNumber);
+
+//Voglio sommare il numero scelto dall'utente con quello scelto dal pc
+var sumResult = (userChoiceNumber + iaChoiceNumber);
+
+//Voglio far si che appaia un alert in cui viene illustrata la somma tra il numero scelto dall'utente e quello del pc
+alert("Il tuo numero " + userChoiceNumber + " + " + "il mio numero " + iaChoiceNumber + " = "  + sumResult);
+
+//Se sumResult è pari = alert "la somma dei due numeri è pari", diversamente "la somma dei due numeri è dispari"
+if (sumResult % 2 == 0) {
+  alert("La somma dei due numeri è pari!");
+} else {
+  alert("La somma dei due numeri è dispari!");
+}
