@@ -1,32 +1,32 @@
 //Chiedo al fra di scegliere tra pari o dispari;
 var userChoicePariDispari = prompt("Ciao fra! Pari o Dispari?");
-//Voglio visualizzare un alert che mi dica "hai scelto pari" oppure "hai scelto dispari";
-if (userChoicePariDispari == "Pari") { //se la risposta è "Pari"
-  alert("Hai scelto Pari!");//allora mandami un alert che dica "Hai scelto Pari!"
-} else if (userChoicePariDispari == "Dispari") {//se invece la risposta è "Dispari"
-  alert("Hai scelto Dispari!");//allora mandami un alert che dica "Hai scelto Dispari!"
-} else {//diversamente
-  alert("Non ho capito fra...");//allora dì al fra che non hai capito
+//Validazione: Se il fra scrive qualcosa di diverso da Pari o Dispari deve comprarire un alert che gli dica di ritentare
+while (userChoicePariDispari != "Pari" && userChoicePariDispari != "Dispari") {
+   userChoicePariDispari = prompt("No fra! Devi scegliere Pari o Dispari!");
 }
+//Se tutto invece prosegue liscio dare conferma:
+alert("Hai scelto " + userChoicePariDispari)
+
 //Chiedo al fra di scegliere un numero tra 1 e 5;
 var userChoiceNumber = parseInt(prompt("Scegli un numero tra 1 e 5..."));
 //Voglio visualizzare un alert che mi dica "Hai scelto (numero)";
-if (userChoiceNumber == "1") {//se la risposta è "1"
-  alert("Hai scelto 1");//allora mandami un alert che dica 1
-} else if (userChoiceNumber == "2") {//se è 2
-  alert("Hai scelto 2");//allora mandami un alert che dica 2
-} else if (userChoiceNumber == "3") {//se è 3
-  alert("Hai scelto 3");//allora mandami un alert che dica 3
-} else if (userChoiceNumber == "4") {//se è 4
-  alert("Hai scelto 4");//allora mandami un alert che dica 4
-} else if (userChoiceNumber == "5") {//se è 5
-  alert("Hai scelto 5");//allora mandami un alert che dica 5
-} else {//diversamente
-  alert("Non va bene fra... devi scegliere un numero da 1 a 5!");//allora mandami un alert che dica al fra che non va bene
+
+//Validazione: Se il fra scrive un numero non compreso tra 1 e 5 non va bene, ritentare;
+while (userChoiceNumber < 1 || userChoiceNumber > 5) {
+  userChoiceNumber = parseInt(prompt("Non va bene fra, puoi scegliere solo tra 1 e 5..."));
 }
+
+//Se tutto invece prosegue liscio dare conferma:
+alert("Hai scelto " + userChoiceNumber);
+
 //Voglio visualizzare un alert che dica "Ora sceglierò anche io un numero"
-var iaChoiseNumber = alert("Ora anche io sceglierò un numero...")
-//Voglio far si che il pc scelga un numero random da 1 a 5
-function getRandomArbitrary(1, 5) {
-  return Math.random() * (1 - 5) + min;
-}// <---Non so se funziona
+alert("Ora anche io sceglierò un numero...");
+
+//Voglio far si che il pc scelga un numero random da 1 a 5 <--- si è rivelato necessario Math.round perchè altrimenti sceglieva un numero decimale
+function getRandomArbitrary(max, min) {
+  return Math.round(Math.random() * (max - min) + min);
+}
+
+//Voglio far si che ci sia una conferma richiamando il numero scelto dal pc in un alert
+var numero = getRandomArbitrary(5, 1);
+alert("Ho scelto il numero " + numero);
